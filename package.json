@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hippiedev/github-clone.git"
+  },
+  "author": "Jonathan Agusa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hippiedev/github-clone/issues"
+  },
+  "homepage": "https://github.com/hippiedev/github-clone#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
