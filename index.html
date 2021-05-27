@@ -9,11 +9,11 @@
   </head>
   <body>
     <h1>Sign in to Github</h1>
-    <form action="profile.html" method="post" onsubmit="postData()">
+    <div class="form">
         <img src="assets/GitHub-Mark-32px.png"/>
       <input id="username" type="text" placeholder="Enter your username"/>
-      <button type="submit">Sign in</button>
-    </form>
+      <button onclick="postData()"><a href="profile.html">Sign in</a></button>
+    </div>
   </body>
   <script>
     function postData() {

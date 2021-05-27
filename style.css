@@ -13,7 +13,7 @@ h1 {
     position: relative;
     top: 130px;
 }
-form {
+.form {
     width: 250px;
     height: 250px;
     border: 2px solid #919191;
@@ -28,7 +28,7 @@ form {
     flex-direction: column;
     background: rgba(77, 77, 77, 0.083);
 }
-form img {
+.form img {
     height: 32px;
     width: 32px;
     margin: 0 auto;
@@ -51,4 +51,9 @@ button {
     border-radius: 5px;
     color: #fff;
     font-size: 14px;
+}
+button a {
+    padding: 5px 65px;
+    color: inherit;
+    text-decoration: none;
 }
