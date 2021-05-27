@@ -94,7 +94,8 @@ fetch("https://api.github.com/graphql", {
     document.querySelector("#name").insertAdjacentHTML("afterbegin", data.data.user.name);
     document.querySelector("#bio").insertAdjacentHTML("beforeend", data.data.user.bio);
     document.querySelector("#username").insertAdjacentHTML("beforeend", username);
-
+    document.querySelector("#title").insertAdjacentHTML("afterbegin", data.data.user.name);
+    
     const thumb = document.querySelector(".thumbnail");
     thumb.style.backgroundImage = `url('${data.data.user.avatarUrl}')`;
 
