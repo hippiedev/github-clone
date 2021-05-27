@@ -29,7 +29,7 @@ let content = {
 };
 
 let body = JSON.stringify(content);
-let token = process.env.API_KEY;
+let token = API_KEY;
 
 fetch("https://api.github.com/graphql", {
   method: "post",
