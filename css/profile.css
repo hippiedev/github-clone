@@ -13,7 +13,7 @@ body {
     display: block;
     transition: 0.3s ease-in;
 }
-.hide {
+.hide-page {
     display: none;
     transition: 0.3s ease-in;
 }
@@ -26,8 +26,28 @@ body {
     top: 35%;
     animation: pageLoad infinite ease-in 1.7s;
 }
-button:hover {
-    background: #8d4444;
+.error-page {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+.error-page img {
+    margin: 0 auto;
+    display: block;
+}
+.error-page button {
+    margin: 0 auto;
+    display: block;
+    background: #2ea44f;
+    border-style: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
 }
 li, button {
     cursor: pointer;
@@ -287,6 +307,18 @@ aside > * {
     background-size: cover;
     background-position: center;
 }
+.status {
+    position: absolute;
+    top: 70%;
+    left: 85%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #e1e4e8;
+}
+span.status-message {
+    display: none;
+}
 .repo-controls {
     box-sizing: border-box;
     padding-top: 16px!important;
@@ -407,6 +439,33 @@ aside > * {
 #subrepo_text span svg {
     margin-right: 3px;
 }
+footer {
+    margin: 0 auto;
+    width: 95%;
+    list-style: none;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 12px;
+    border-top: 1px solid #e1e4e8;
+    color: #586069;
+}
+.footer-container {
+    margin: 0 auto;
+}
+.footer-container li {
+    padding-left: 50px;
+    margin-top: 20px;
+    color: #0366d6;
+    display: inline-block;
+}
+.footer-container li#copyright {
+    color: inherit;
+}
+.footer-container li#logo {
+    color: #d1d5da;
+    margin: 0 32px
+}
 @media(max-width: 1200px) {
     .user_ops {
         left: 87%;
@@ -493,13 +552,21 @@ aside > * {
         border-bottom: 1px solid #e1e4e8;
         margin-top: 0;
     }
+    .status {
+        display: none;
+    }
     .search-wrapper {
         display: none;
     }
     .logo {
         margin: 0 auto;
     }
-
+    .footer-container li {
+        margin-top: 10px;
+    }
+    .footer-container li#logo {
+        display: none;
+    }
 }
 @keyframes pageLoad {
     0% {

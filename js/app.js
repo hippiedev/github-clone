@@ -1,4 +1,5 @@
-const username = localStorage.getItem("username");
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get("username");
 
 let content = {
   query: `query($username: String!) {
@@ -71,7 +72,7 @@ fetch("https://api.github.com/graphql", {
 })
   .then((response) => response.json())
   .then((data) => {
-    const html = data.data.user.repositories.nodes
+    const repositories = data.data.user.repositories.nodes
       .map((repo) => {
         return `
           <div id="repo_container" key="${repo.id}">
@@ -122,7 +123,9 @@ fetch("https://api.github.com/graphql", {
     let sub_userthumb = `<img class="user_thumb" src="${data.data.user.avatarUrl}"/>
       <span class="dropdown-caret"></span>`;
 
-    document.querySelector("#repo").insertAdjacentHTML("beforeend", html);
+    document
+      .querySelector("#repo")
+      .insertAdjacentHTML("beforeend", repositories);
     document
       .querySelector("#user")
       .insertAdjacentHTML("afterbegin", sub_userthumb);
@@ -140,16 +143,27 @@ fetch("https://api.github.com/graphql", {
       .insertAdjacentHTML(
         "afterbegin",
         `${username} (${data.data.user.name}) / Repositories`
-      )
+      );
+    const userStatus = data.data.user.status;
+    const status = document.querySelector(".status");
+    if (userStatus == null) {
+      status.style.display = "none";
+    }
+    const userStatusElement =
+      userStatus === null
+        ? ""
+        : `<span class="emoji">${userStatus.emojiHTML}</span>`;
+    document
+      .querySelector(".status")
+      .insertAdjacentHTML("afterbegin", userStatusElement);
 
     const thumb = document.querySelector(".thumbnail");
-
     thumb.style.backgroundImage = `url('${data.data.user.avatarUrl}')`;
   })
   .finally(() => {
-    document.querySelector(".page-loader").classList.add("hide");
+    document.querySelector(".page-loader").classList.add("hide-page");
   })
   .catch((error) => {
-    console.log(error)
-    document.body.innerHTML = `<div class="error-page">Sorry! can't find the user.</div>`
-  }) 
+    console.log(error);
+    document.body.innerHTML = `<div class="error-page"><img src="assets/github-404.png" alt="Octocat" /> <p>Sorry! We weren't able to find this user, for some reason.</p><a href="index.html"><button>Go back to sign in</button></a></div>`;
+  });
