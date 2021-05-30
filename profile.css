@@ -10,11 +10,11 @@ body {
     position: absolute;
     z-index: 100;
     background: #fff;
-    opacity: 1;
+    display: block;
     transition: 0.3s ease-in;
 }
 .hide {
-    opacity: 0;
+    display: none;
     transition: 0.3s ease-in;
 }
 .page-loader img {
