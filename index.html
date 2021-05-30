@@ -2,18 +2,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/GitHub-Mark-Light-32px.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github</title>
   </head>
   <body>
     <h1>Sign in to Github</h1>
-    <div class="form">
-        <img src="assets/GitHub-Mark-32px.png"/>
-      <input id="username" type="text" placeholder="Enter your username"/>
-      <button onclick="postData()"><a href="profile.html">Sign in</a></button>
-    </div>
+
+    <form action="profile.html" onsubmit="postData()">
+      <img src="assets/GitHub-Mark-32px.png" />
+      <input id="username" type="text" placeholder="Enter your username" />
+      <button type="submit" onclick="postData()">
+        <a href="profile.html">Sign in</a>
+      </button>
+    </form>
   </body>
   <script>
     function postData() {
