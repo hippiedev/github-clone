@@ -4,6 +4,28 @@ body {
     background: #fff;
     overflow-x: hidden;
 }
+.page-loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    background: #fff;
+    opacity: 1;
+    transition: 0.3s ease-in;
+}
+.hide {
+    opacity: 0;
+    transition: 0.3s ease-in;
+}
+.page-loader img {
+    height: 170px;
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 35%;
+    animation: pageLoad infinite ease-in 1.7s;
+}
 button:hover {
     background: #8d4444;
 }
@@ -35,6 +57,15 @@ header {
 .logo {
     margin-right: 16px;
     align-self: stretch;
+}
+.menu-bar {
+    display: none;
+}
+.mobile-notifs {
+    display: none;
+}
+.menu-bar svg {
+    color: #fff;
 }
 .search-wrapper {
     vertical-align: middle;
@@ -98,6 +129,18 @@ header {
     position: absolute;
     left: 89%;
 }
+:is(.user_ops, .mobile-notifs) .mail_status {
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    background: linear-gradient(#54a3ff,#006eed);
+    background-clip: padding-box;
+    border: 2px solid #24292e;
+    border-radius: 50%;
+}
 .user_ops li {
     margin-right: 16px;
     list-style: none;
@@ -152,12 +195,13 @@ aside {
 .user-info {
     position: relative;
     line-height: 1.5;
+    margin-top: 16px;
 }
 .user-info > * {
     margin: 0;
 }
-.user-info h2#username {
-    font-weight: 600;
+.user-info h2#name {
+    font-weight: 500;
     color: #24292e;
     font-size: 26px;
 }
@@ -363,7 +407,15 @@ aside > * {
 #subrepo_text span svg {
     margin-right: 3px;
 }
-@media(max-width: 1000px) {
+@media(max-width: 1200px) {
+    .user_ops {
+        left: 87%;
+    }
+}
+@media(max-width: 1010px) {
+    .user_ops {
+        left: 85%;
+    }
     .repo-controls {
         flex-direction: column;
     }
@@ -376,13 +428,35 @@ aside > * {
     }
 }
 @media (max-width: 768px) {
+    header {
+        padding: 16px;
+    }
     nav.main_navigation {
         display: none;
     }
     .user_ops {
         display: none;
     }
-    
+    .menu-bar {
+        display: inline-block;
+        color: #fff;
+    }
+    .three-bars {
+        fill: currentColor;
+        position: relative;
+        top: 4px;
+    }
+    .mobile-notifs {
+        display: inline-block;
+        position: relative;
+        top: 10px;
+    }
+    .mobile-notifs svg {
+        height: 16;
+        width: 16;
+        color: #fff;
+        vertical-align: middle;
+    }
     main {
         flex-direction: column;
     }
@@ -426,4 +500,15 @@ aside > * {
         margin: 0 auto;
     }
 
+}
+@keyframes pageLoad {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.5);
+    }
 }

@@ -12,10 +12,12 @@ h1 {
     text-align: center;
     position: relative;
     top: 130px;
+    z-index: 10;
 }
 form {
     width: 250px;
     height: 250px;
+    z-index: 30;
     border: 2px solid #919191;
     border-radius: 20px;
     margin: 0;
