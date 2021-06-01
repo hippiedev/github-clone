@@ -13,6 +13,7 @@ let content = {
         __typename
       }
       repositories(first: 20, isFork: false, privacy:PUBLIC, ownerAffiliations:OWNER, orderBy: {field: UPDATED_AT, direction: DESC}) {
+        totalCount
         nodes {
           id
           name
@@ -126,6 +127,9 @@ fetch("https://api.github.com/graphql", {
     document
       .querySelector("#repo")
       .insertAdjacentHTML("beforeend", repositories);
+    document
+      .querySelector("#active")
+      .insertAdjacentHTML("beforeend", `<span>${data.data.user.repositories.totalCount}</span>`);
     document
       .querySelector("#user")
       .insertAdjacentHTML("afterbegin", sub_userthumb);

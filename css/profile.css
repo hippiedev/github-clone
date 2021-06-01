@@ -277,6 +277,18 @@ nav.sub_navigation ul li:nth-child(2) {
     outline: 1px dotted transparent;
     outline-offset: -4px;
 }
+nav.sub_navigation ul li:nth-child(2) span span {
+    background: rgb(209 213 218 / 50%);
+    color: #24292e;
+    display: inline-block;
+    min-width: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 0 6px;
+    border-radius: 2em;
+    box-sizing: border-box;
+    line-height: 18px;
+}
 section {
     height: fit-content;
     width: 78%;
