@@ -464,6 +464,8 @@ footer {
 }
 .footer-container {
     margin: 0 auto;
+    position: relative;
+    left: -2%;
 }
 .footer-container li {
     padding-left: 50px;
@@ -573,8 +575,15 @@ footer {
     .logo {
         margin: 0 auto;
     }
+    footer {
+        padding-top: 20px;
+    }
+    .footer-container {
+        left: -3%;
+    }
     .footer-container li {
         margin-top: 10px;
+        padding-left: 25px;
     }
     .footer-container li#logo {
         display: none;
