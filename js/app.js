@@ -129,7 +129,7 @@ fetch("https://api.github.com/graphql", {
       .insertAdjacentHTML("beforeend", repositories);
     document
       .querySelector("#active")
-      .insertAdjacentHTML("beforeend", `<span>${data.data.user.repositories.totalCount}</span>`);
+      .insertAdjacentHTML("beforeend", `<span>${data.data.user.repositories.totalCount > 20 ? '20' : data.data.user.repositories.totalCount}</span>`);
     document
       .querySelector("#user")
       .insertAdjacentHTML("afterbegin", sub_userthumb);
