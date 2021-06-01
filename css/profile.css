@@ -395,6 +395,9 @@ span.status-message {
     margin: 0 auto;
     width: 100%;
 }
+#repo div#repo_container:last-child {
+    border-bottom: none;
+}
 #repo div#repo_container h3 {
     font-size: 20px;
     font-weight: 600;
