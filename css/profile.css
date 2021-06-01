@@ -386,6 +386,11 @@ span.status-message {
     border-radius: 6px;
     user-select: none;
     box-sizing: border-box;
+    transition: 0.3s;
+}
+.controls button:hover {
+    background: #24292e10;
+    transition: 0.3s;
 }
 #repo div#repo_container {
     box-sizing: border-box;
@@ -415,6 +420,11 @@ span.status-message {
     border-radius: 6px;
     line-height: 20px;
     font-weight: 500;
+    transition: 0.3s;
+}
+#repo_container button:hover {
+    background: #24292e10;
+    transition: 0.3s;
 }
 #repo_container button svg {
     margin-right: 4px;
@@ -455,6 +465,8 @@ span.status-message {
     margin-right: 3px;
 }
 footer {
+    position: relative;
+    top: 100px;
     margin: 0 auto;
     width: 95%;
     list-style: none;

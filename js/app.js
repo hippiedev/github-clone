@@ -12,7 +12,7 @@ let content = {
         message
         __typename
       }
-      repositories(first: 20, isFork: false, privacy:PUBLIC, ownerAffiliations:OWNER, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      repositories(first: 20, isFork: false, privacy:PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}) {
         totalCount
         nodes {
           id
