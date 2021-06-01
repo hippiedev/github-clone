@@ -84,20 +84,27 @@ footer {
     margin-top: 20px;
     color: #0366d6;
     display: inline-block;
+    position: relative;
+    left: -2%;
 }
 .footer-container li#copyright {
     color: inherit;
 }
 .footer-container li#logo {
-    color: #d1d5da;
+    fill: #d1d5da;
     margin: 0 32px
 }
 @media(max-width: 768px) {
     footer {
+        padding-top: 20px;
         top: 600px;
+    }
+    .footer-container {
+        left: -3%;
     }
     .footer-container li {
         margin-top: 10px;
+        padding-left: 25px;
     }
     .footer-container li#logo {
         display: none;
