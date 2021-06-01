@@ -4,7 +4,8 @@
 
 
 
-https://user-images.githubusercontent.com/54756572/120161946-2ca51a80-c1f8-11eb-8692-db01ca24c20e.gif
+![github-clone-gif](https://user-images.githubusercontent.com/54756572/120374802-4cccfa80-c31a-11eb-896f-a5f6554acf5e.gif)
+
 
 
 
